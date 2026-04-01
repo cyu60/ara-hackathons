@@ -65,7 +65,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 4rem 2rem;
+      padding: 4rem max(2rem, calc((100vw - 800px) / 2));
       background: var(--fg);
       color: #fff;
       position: relative;
@@ -198,9 +198,9 @@
     }
 
     /* ─── Sections ─── */
-    .section { padding: 5.5rem 2rem; }
+    .section { padding: 5.5rem max(2rem, calc((100vw - 800px) / 2)); }
     .section-alt { background: var(--section-alt); }
-    .container { max-width: 800px; margin: 0 auto; }
+    .container { max-width: 800px; margin: 0 auto; width: 100%; }
 
     .section-label {
       font-family: 'DM Mono', monospace;
