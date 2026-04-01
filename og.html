@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1200" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1200px;
+      height: 630px;
+      background: #10111a;
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    body::before {
+      content: '';
+      position: absolute;
+      top: 5%;
+      right: 8%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(38,82,230,0.22) 0%, rgba(38,82,230,0.05) 40%, transparent 70%);
+      border-radius: 50%;
+    }
+    body::after {
+      content: '';
+      position: absolute;
+      bottom: -15%;
+      left: -5%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(211,161,74,0.1) 0%, transparent 60%);
+      border-radius: 50%;
+    }
+    .inner {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      padding: 0 80px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+    .logo svg { width: 32px; height: 32px; }
+    .logo span {
+      font-family: 'DM Serif Display', serif;
+      font-size: 16px;
+      color: rgba(255,255,255,0.5);
+    }
+    .badge {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #d3a14a;
+      border: 1px solid rgba(211,161,74,0.3);
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 64px;
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    h1 em { font-style: italic; color: #2652e6; }
+    .sub {
+      font-size: 18px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+      max-width: 650px;
+    }
+    .meta {
+      margin-top: 40px;
+      display: flex;
+      gap: 48px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .meta-item { display: flex; flex-direction: column; gap: 4px; }
+    .meta-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+    }
+    .meta-value {
+      font-size: 15px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.8);
+    }
+  </style>
+</head>
+<body>
+  <div class="inner">
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+        <path fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"
+          d="M166 82c-8-4-17-6-27-6c-32 0-58 26-58 58s26 58 58 58c26 0 48-17 55-41c-7 4-16 6-25 6c-26 0-46-20-46-46c0-12 4-22 11-29c7-7 20-7 32 0z"/>
+      </svg>
+      <span>DayDreamers</span>
+    </div>
+    <div class="badge">Partnership Proposal</div>
+    <h1>College<br/><em>Activation</em></h1>
+    <p class="sub">Coordinated campus tour across 8 leading US universities to drive awareness and adoption of Ara among student builders.</p>
+    <div class="meta">
+      <div class="meta-item">
+        <span class="meta-label">Prepared For</span>
+        <span class="meta-value">Ara</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Prepared By</span>
+        <span class="meta-value">DayDreamers</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Timeline</span>
+        <span class="meta-value">Apr–Jun 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Investment</span>
+        <span class="meta-value">$50,000 USD</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

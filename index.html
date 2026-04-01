@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ara Hackathons — Campus Partnership with DayDreamers</title>
+
+  <!-- Open Graph / Link Preview -->
+  <meta property="og:title" content="College Activation — Ara × DayDreamers" />
+  <meta property="og:description" content="Coordinated campus tour across 8 leading US universities to drive awareness and adoption of Ara among student builders." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ara-proposal.daydreamers-academy.com" />
+  <meta property="og:image" content="https://ara-proposal.daydreamers-academy.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="College Activation — Ara × DayDreamers" />
+  <meta name="twitter:description" content="Coordinated campus tour across 8 leading US universities to drive awareness and adoption of Ara among student builders." />
+  <meta name="twitter:image" content="https://ara-proposal.daydreamers-academy.com/og.png" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='none' stroke='%231c3fdc' stroke-width='18' stroke-linecap='round' stroke-linejoin='round' d='M166 82c-8-4-17-6-27-6c-32 0-58 26-58 58s26 58 58 58c26 0 48-17 55-41c-7 4-16 6-25 6c-26 0-46-20-46-46c0-12 4-22 11-29c7-7 20-7 32 0z'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f4efe8;
+      --fg: #10111a;
+      --fg-soft: #23263a;
+      --muted: #70675f;
+      --accent: #2652e6;
+      --accent-light: #dfe7ff;
+      --gold: #d3a14a;
+      --border: rgba(16,17,26,0.10);
+      --card: #fbf7f1;
+      --section-alt: #ece5da;
+      --radius: 14px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ─── Hero ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 2rem;
+      background: var(--fg);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      right: 5%;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(38,82,230,0.2) 0%, rgba(38,82,230,0.05) 40%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: hero-glow 8s ease-in-out infinite alternate;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -10%;
+      left: -5%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(211,161,74,0.08) 0%, transparent 60%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    @keyframes hero-glow {
+      0% { transform: translate(0, 0) scale(1); opacity: 1; }
+      100% { transform: translate(-30px, 20px) scale(1.15); opacity: 0.7; }
+    }
+
+    .hero-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fade-up 0.8s 0.2s ease forwards;
+    }
+
+    .hero-logo svg { width: 36px; height: 36px; }
+
+    .hero-logo span {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.02em;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      border: 1px solid rgba(211,161,74,0.25);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      opacity: 0;
+      animation: fade-up 0.8s 0.35s ease forwards;
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.12;
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      animation: fade-up 0.8s 0.5s ease forwards;
+    }
+
+    .hero h1 em { font-style: italic; color: var(--accent); }
+
+    .hero > .hero-inner > p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.55);
+      max-width: 600px;
+      line-height: 1.85;
+      opacity: 0;
+      animation: fade-up 0.8s 0.65s ease forwards;
+    }
+
+    .hero-meta {
+      margin-top: 3.5rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      opacity: 0;
+      animation: fade-up 0.8s 0.8s ease forwards;
+    }
+
+    .hero-meta-item { display: flex; flex-direction: column; gap: 0.3rem; }
+
+    .hero-meta-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .hero-meta-value {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+    }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── Sections ─── */
+    .section { padding: 5.5rem 2rem; }
+    .section-alt { background: var(--section-alt); }
+    .container { max-width: 800px; margin: 0 auto; }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.3rem);
+      font-weight: 400;
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .section h2 em { font-style: italic; color: var(--accent); }
+
+    .section p {
+      color: var(--muted);
+      font-size: 1.02rem;
+      margin-bottom: 1rem;
+      line-height: 1.75;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    /* ─── Data list ─── */
+    .data-list {
+      list-style: none;
+      display: grid;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+
+    .data-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .data-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 0.55rem;
+    }
+
+    /* ─── University grid ─── */
+    .uni-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .uni-logo {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      margin-right: 0.75rem;
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+
+    .uni-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .uni-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16,17,26,0.06);
+    }
+
+    /* blue dots removed — uni logos replace them */
+
+    /* ─── Deliverable cards ─── */
+    .deliverable-list {
+      margin-top: 1.5rem;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .deliverable-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+    }
+
+    .deliverable-item h4 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .deliverable-item h4::before {
+      content: '\2713';
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .deliverable-item p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0;
+      padding-left: 1.35rem;
+    }
+
+    /* ─── Schedule table ─── */
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      text-align: left;
+      padding: 1rem 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .schedule-table thead { background: var(--fg); color: #fff; }
+
+    .schedule-table thead th {
+      font-family: 'DM Mono', monospace;
+      font-weight: 500;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .schedule-table tbody tr { border-top: 1px solid var(--border); }
+    .schedule-table tbody tr:first-child { border-top: none; }
+
+    .schedule-table .time-col {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* ─── Execution list ─── */
+    .exec-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .exec-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .exec-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16,17,26,0.06);
+    }
+
+    .exec-item h4 { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .exec-item p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+
+    /* ─── Timeline ─── */
+    .timeline {
+      margin-top: 2.5rem;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 17px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .tl-item {
+      display: flex;
+      gap: 1.5rem;
+      padding-bottom: 2rem;
+      position: relative;
+    }
+
+    .tl-item:last-child { padding-bottom: 0; }
+
+    .tl-dot {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tl-content { flex: 1; padding-top: 0.3rem; }
+    .tl-content h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .tl-content p { font-size: 0.88rem; color: var(--muted); margin-bottom: 0; }
+
+    /* ─── Contacts table ─── */
+    .contacts-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .contacts-table th,
+    .contacts-table td {
+      text-align: left;
+      padding: 0.85rem 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .contacts-table thead { background: var(--fg); color: #fff; }
+
+    .contacts-table thead th {
+      font-family: 'DM Mono', monospace;
+      font-weight: 500;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .contacts-table tbody tr { border-top: 1px solid var(--border); }
+    .contacts-table tbody tr:first-child { border-top: none; }
+
+    .contacts-table tbody tr:hover { background: rgba(38,82,230,0.03); }
+
+    /* ─── Experience grid ─── */
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .experience-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .experience-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16,17,26,0.06);
+    }
+
+    .experience-item h4 { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.35rem; }
+    .experience-item p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+
+    .experience-item .stat {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      line-height: 1;
+    }
+
+    /* ─── Event showcase images ─── */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .showcase-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .showcase-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .showcase-item:hover img { transform: scale(1.03); }
+
+    .showcase-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+      background: linear-gradient(transparent, rgba(16,17,26,0.85));
+      color: #fff;
+    }
+
+    .showcase-caption h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.15rem; }
+    .showcase-caption p { font-size: 0.72rem; color: rgba(255,255,255,0.65); margin: 0; }
+
+    /* Showcase cards — image separate from text */
+    .showcase-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: block;
+    }
+
+    .showcase-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(16,17,26,0.08);
+    }
+
+    .showcase-card-img {
+      overflow: hidden;
+    }
+
+    .showcase-card-img img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .showcase-card:hover .showcase-card-img img {
+      transform: scale(1.03);
+    }
+
+    .showcase-card-body {
+      padding: 1rem 1.25rem;
+    }
+
+    .showcase-card-body h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .showcase-card-body p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ─── Team ─── */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .team-member { text-align: center; }
+
+    .team-member img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+    }
+
+    .team-member h4 {
+      font-family: 'DM Mono', monospace;
+      font-size: 1rem;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .team-member .role {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .team-member p { font-size: 0.82rem; color: var(--muted); margin: 0; line-height: 1.6; }
+
+    /* ─── References ─── */
+    .ref-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .ref-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .ref-item:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16,17,26,0.06); }
+    .ref-item img { width: 100%; height: 160px; object-fit: cover; display: block; }
+    .ref-item .ref-caption { padding: 1rem; }
+    .ref-item .ref-caption h4 { font-size: 0.88rem; font-weight: 600; margin-bottom: 0.2rem; }
+    .ref-item .ref-caption p { font-size: 0.78rem; color: var(--muted); margin: 0; }
+
+    /* ─── Stats row ─── */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 1.75rem 1.25rem;
+      background: var(--card);
+    }
+
+    .stat-item .stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-item .stat-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ─── Pricing ─── */
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+      text-align: left;
+      padding: 1.15rem 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .pricing-table thead { background: var(--fg); color: #fff; }
+
+    .pricing-table thead th {
+      font-family: 'DM Mono', monospace;
+      font-weight: 500;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .pricing-table tbody tr { border-top: 1px solid var(--border); }
+    .pricing-table tbody tr:first-child { border-top: none; }
+
+    .pricing-highlight {
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 1.1rem !important;
+    }
+
+    .pricing-note {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* ─── Footer ─── */
+    .footer {
+      padding: 4rem 2rem;
+      background: var(--fg);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-logo svg { width: 28px; height: 28px; }
+
+    .footer-logo span {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .footer p { font-size: 0.9rem; margin-bottom: 0.25rem; }
+
+    .footer-conf {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.2);
+    }
+
+    /* ─── Scroll animation ─── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    .fade-in.visible .uni-item,
+    .fade-in.visible .deliverable-item,
+    .fade-in.visible .exec-item,
+    .fade-in.visible .tl-item,
+    .fade-in.visible .experience-item,
+    .fade-in.visible .stat-item {
+      opacity: 0;
+      animation: fade-up 0.5s ease forwards;
+    }
+
+    .fade-in.visible :nth-child(1) { animation-delay: 0.05s; }
+    .fade-in.visible :nth-child(2) { animation-delay: 0.1s; }
+    .fade-in.visible :nth-child(3) { animation-delay: 0.15s; }
+    .fade-in.visible :nth-child(4) { animation-delay: 0.2s; }
+    .fade-in.visible :nth-child(5) { animation-delay: 0.25s; }
+    .fade-in.visible :nth-child(6) { animation-delay: 0.3s; }
+    .fade-in.visible :nth-child(7) { animation-delay: 0.35s; }
+    .fade-in.visible :nth-child(8) { animation-delay: 0.4s; }
+    .fade-in.visible :nth-child(9) { animation-delay: 0.45s; }
+    .fade-in.visible :nth-child(10) { animation-delay: 0.5s; }
+    .fade-in.visible :nth-child(11) { animation-delay: 0.55s; }
+    .fade-in.visible :nth-child(12) { animation-delay: 0.6s; }
+    .fade-in.visible :nth-child(13) { animation-delay: 0.65s; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 700px) {
+      .hero { padding: 3rem 1.5rem; }
+      .hero-meta { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+      .section { padding: 3.5rem 1.5rem; }
+      .uni-grid { grid-template-columns: 1fr; }
+      .exec-grid { grid-template-columns: 1fr; }
+      .experience-grid { grid-template-columns: 1fr; }
+      .showcase-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      .ref-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    /* ─── Print / PDF ─── */
+    @media print {
+      .fade-in { opacity: 1 !important; transform: none !important; }
+      .fade-in * { opacity: 1 !important; animation: none !important; }
+      .hero::before, .hero::after, body::after { display: none; }
+
+      .section, .hero {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      /* Uniform background */
+      body { background: var(--bg) !important; }
+      .section-alt { background: var(--bg) !important; }
+      .section { background: var(--bg) !important; }
+      .hero { background: var(--fg) !important; }
+      .footer { background: var(--fg) !important; }
+
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      /* Hide the actual footer element in print — replaced by running footer */
+      .footer { display: none !important; }
+
+      /* Running footer on every page */
+      @page {
+        margin: 0;
+        @bottom-center {
+          content: "Ara × DayDreamers  ·  Campus Partnership";
+        }
+      }
+    }
+
+    /* Page footer bar — rendered on every PDF page via Playwright */
+    .page-footer-bar {
+      display: none;
+    }
+
+    @media print {
+      .page-footer-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0.6rem 2rem;
+        background: var(--fg);
+        color: rgba(255,255,255,0.45);
+        font-family: 'DM Mono', monospace;
+        font-size: 0.6rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        z-index: 9999;
+      }
+
+      .page-footer-bar svg { width: 16px; height: 16px; }
+
+      /* Add horizontal breathing room in PDF without changing the live site.
+         Keep PDF page margins at 0 so the paper color runs edge to edge. */
+      .hero {
+        padding-left: 3.6rem !important;
+        padding-right: 3.6rem !important;
+      }
+
+      .section {
+        padding-left: 3.6rem !important;
+        padding-right: 3.6rem !important;
+      }
+
+      .hero-inner,
+      .container {
+        max-width: 640px !important;
+      }
+
+      /* Add bottom padding to body so content doesn't overlap footer */
+      body { padding-bottom: 0; }
+      .section { padding-bottom: 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-logo" style="justify-content:space-between;width:100%;">
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <img src="images/ara-logo.png" alt="Ara" style="width:36px;height:36px;filter:invert(1);"/>
+          <span style="font-family:'DM Serif Display',serif;font-size:1.15rem;color:rgba(255,255,255,0.6);">Ara</span>
+          <span style="color:rgba(255,255,255,0.7);margin:0 0.5rem;font-size:1.1rem;">&times;</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" style="width:28px;height:28px;">
+            <path fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"
+              d="M166 82c-8-4-17-6-27-6c-32 0-58 26-58 58s26 58 58 58c26 0 48-17 55-41c-7 4-16 6-25 6c-26 0-46-20-46-46c0-12 4-22 11-29c7-7 20-7 32 0z"/>
+          </svg>
+          <span style="font-family:'DM Serif Display',serif;font-size:1.15rem;color:rgba(255,255,255,0.6);">DayDreamers</span>
+        </div>
+      </div>
+      <span class="hero-badge">Campus Partnership</span>
+      <h1>Ara × Your<br/><em>University</em></h1>
+      <p>DayDreamers and Ara are partnering with leading universities to bring hands-on AI builder events to campus — empowering student builders with cutting-edge tools, mentorship, and a global community.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Organized By</span>
+          <span class="hero-meta-value">DayDreamers × Ara</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Format</span>
+          <span class="hero-meta-value">6-Hour Builder Sprint</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Timeline</span>
+          <span class="hero-meta-value">Apr–Jun 2026</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Cost to School</span>
+          <span class="hero-meta-value">Free</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section fade-in">
+    <div class="container">
+      <span class="section-label">Overview</span>
+      <h2>What Your Students <em>Get</em></h2>
+      <p>A fully organized, high-energy AI builder event on your campus. We handle everything — logistics, catering, mentorship, prizes, and promotion. Your students get hands-on experience building with cutting-edge AI tools and join a cross-university builder community.</p>
+      <p>The program combines on-the-ground event execution with a persistent online builder community, transforming isolated campus stops into a connected national network of Ara builders.</p>
+
+      <ul class="data-list">
+        <li>Campus tour across 6 universities with on-site DayDreamers staff</li>
+        <li>Ara builder community on Discord or Slack as a central hub</li>
+        <li>Repeatable 6-hour builder sprint format at each stop</li>
+        <li>End-to-end execution from outreach to post-event reporting</li>
+        <li>Media outreach to relevant publications</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- About Ara -->
+  <section class="section section-alt fade-in">
+    <div class="container">
+      <span class="section-label">About Ara</span>
+      <h2>Your Personal <em>AI Agent</em></h2>
+      <div style="display:flex;gap:2rem;align-items:flex-start;margin-bottom:1.5rem;">
+        <img src="images/ara-logo.png" alt="Ara" style="width:80px;height:80px;flex-shrink:0;border-radius:var(--radius);"/>
+        <div>
+          <p>Ara (YC X26) is a personal AI agent that works 24/7 across WhatsApp, iMessage, Signal, and Telegram. One download gives users access to Claude, GPT, and Gemini through a privacy-first, cross-messenger interface.</p>
+          <p>Ara is actively targeting the university market — already adopted at Stanford, UC Berkeley, Virginia Tech, and Carnegie Mellon. This campus tour accelerates that momentum across 6 additional top-tier institutions.</p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;">
+        <div class="deliverable-item" style="text-align:center;flex-direction:column;">
+          <strong style="color:var(--accent);font-size:1.1rem;">24/7</strong>
+          <span style="font-size:0.78rem;color:var(--muted);">Always-on AI agent</span>
+        </div>
+        <div class="deliverable-item" style="text-align:center;flex-direction:column;">
+          <strong style="color:var(--accent);font-size:1.1rem;">4+</strong>
+          <span style="font-size:0.78rem;color:var(--muted);">Messaging platforms</span>
+        </div>
+        <div class="deliverable-item" style="text-align:center;flex-direction:column;">
+          <strong style="color:var(--accent);font-size:1.1rem;">3</strong>
+          <span style="font-size:0.78rem;color:var(--muted);">AI models (Claude, GPT, Gemini)</span>
+        </div>
+        <div class="deliverable-item" style="text-align:center;flex-direction:column;">
+          <strong style="color:var(--accent);font-size:1.1rem;">YC X26</strong>
+          <br/>
+          <span style="font-size:0.78rem;color:var(--muted);">Y Combinator backed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Campus Tour -->
+  <section class="section fade-in">
+    <div class="container">
+      <span class="section-label">Part A.1 — Campus Tour</span>
+      <h2>Target <em>Universities</em></h2>
+      <p>We partner with local student communities and technical clubs at each university to organize hackathons and builder events. Each campus activation is supported by 1 to 3 on-site DayDreamers staff members.</p>
+
+      <div class="uni-grid">
+        <div class="uni-item"><img src="images/universities/stanford.svg" alt="Stanford" class="uni-logo"/>Stanford University</div>
+        <div class="uni-item"><img src="images/universities/johns-hopkins.svg" alt="JHU" class="uni-logo"/>Johns Hopkins University</div>
+        <div class="uni-item"><img src="images/universities/harvard.svg" alt="Harvard" class="uni-logo"/>Harvard University</div>
+        <div class="uni-item"><img src="images/universities/mit.svg" alt="MIT" class="uni-logo"/>Massachusetts Institute of Technology</div>
+        <div class="uni-item"><img src="images/universities/upenn.svg" alt="UPenn" class="uni-logo"/>University of Pennsylvania</div>
+        <div class="uni-item"><img src="images/universities/nyu.svg" alt="NYU" class="uni-logo"/>New York University</div>
+        <div class="uni-item"><img src="images/universities/columbia.svg" alt="Columbia" class="uni-logo"/>Columbia University</div>
+        <div class="uni-item"><img src="images/universities/berkeley.svg" alt="UC Berkeley" class="uni-logo"/>University of California, Berkeley</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Builder Community -->
+  <section class="section fade-in">
+    <div class="container">
+      <span class="section-label">Part A.2 — Builder Community</span>
+      <h2>Ara Builder <em>Network</em></h2>
+      <p>Alongside the campus tour, DayDreamers will build the Ara builder community on Discord or Slack. This online community serves as a central hub connecting students, builders, and organizers across all participating universities.</p>
+
+      <div class="deliverable-list">
+        <div class="deliverable-item">
+          <h4>Cross-University Onboarding</h4>
+          <p>Onboard participants from each campus activation into a shared global builder community.</p>
+        </div>
+        <div class="deliverable-item">
+          <h4>Inter-University Collaboration</h4>
+          <p>Enable collaboration between students from different universities working on Ara projects.</p>
+        </div>
+        <div class="deliverable-item">
+          <h4>Resources and Tutorials</h4>
+          <p>Share tutorials, build resources, and project support materials for Ara.</p>
+        </div>
+        <div class="deliverable-item">
+          <h4>Project Showcases</h4>
+          <p>Highlight projects and demos created during the hackathons to inspire new builders.</p>
+        </div>
+        <div class="deliverable-item">
+          <h4>Sustained Engagement</h4>
+          <p>Maintain engagement after each campus event, extending impact beyond the physical activations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Format -->
+  <section class="section section-alt fade-in">
+    <div class="container">
+      <span class="section-label">Part A.3 — Event Format</span>
+      <h2>6-Hour Builder <em>Sprint</em></h2>
+      <p>Each campus stop follows a repeatable six-hour format — short enough for strong student turnout, long enough for real product usage and demos, and easy to replicate across campuses.</p>
+
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Activity</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Kickoff &amp; Live Ara Demo</td>
+            <td class="time-col">30 min</td>
+          </tr>
+          <tr>
+            <td>Idea Formation &amp; Team Matching</td>
+            <td class="time-col">45 min</td>
+          </tr>
+          <tr>
+            <td>Guided Build Session</td>
+            <td class="time-col">3 hours</td>
+          </tr>
+          <tr>
+            <td>Mentor Feedback</td>
+            <td class="time-col">45 min</td>
+          </tr>
+          <tr>
+            <td>Demos &amp; Judging</td>
+            <td class="time-col">60 min</td>
+          </tr>
+          <tr>
+            <td>Closing &amp; Community Onboarding</td>
+            <td class="time-col">30 min</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ul class="data-list" style="margin-top:2rem;">
+        <li>Short enough for strong student turnout</li>
+        <li>Long enough for real product usage and demos</li>
+        <li>Easy to repeat across campuses</li>
+        <li>Lighter operationally than a 24–48 hour hackathon</li>
+        <li>Well suited to a multi-campus roadshow</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- End-to-End Execution -->
+  <section class="section fade-in">
+    <div class="container">
+      <span class="section-label">Part A.4 — Execution</span>
+      <h2>End-to-End <em>Management</em></h2>
+      <p>DayDreamers manages the entire process. The Ara team simply has to review the materials.</p>
+
+      <div class="exec-grid">
+        <div class="exec-item">
+          <h4>University Outreach</h4>
+          <p>Direct engagement with student organizations and campus contacts at each target school.</p>
+        </div>
+        <div class="exec-item">
+          <h4>Organizer Coordination</h4>
+          <p>Student organizer recruitment, briefing, and alignment for each campus activation.</p>
+        </div>
+        <div class="exec-item">
+          <h4>Event Planning</h4>
+          <p>Venue, schedule, logistics, and run-of-show planning for each six-hour sprint.</p>
+        </div>
+        <div class="exec-item">
+          <h4>Marketing &amp; Promotion</h4>
+          <p>Student-facing outreach, social media, and registration management for each stop.</p>
+        </div>
+        <div class="exec-item">
+          <h4>Onsite Operations</h4>
+          <p>Day-of execution with 1–3 DayDreamers staff members ensuring consistency across events.</p>
+        </div>
+        <div class="exec-item">
+          <h4>Post-Event Reporting</h4>
+          <p>Attendance metrics, project summaries, and community growth data after each activation.</p>
+        </div>
+      </div>
+
+      <p style="margin-top:2rem; font-size:0.88rem; color:var(--muted)"><strong>Media Outreach:</strong> DayDreamers will conduct media outreach to relevant publications. Any resulting media coverage is dependent on editorial decisions made by third-party media organizations and cannot be guaranteed.</p>
+    </div>
+  </section>
+
+  <!-- Food & Catering -->
+  <section class="section section-alt fade-in">
+    <div class="container">
+      <span class="section-label">Part A.5 — Catering</span>
+      <h2>Food & <em>Refreshments</em></h2>
+      <p>Each 6-hour builder sprint includes a full meal service plus snacks and beverages throughout the event. We work primarily with local food providers near each campus — supporting local businesses and creating an authentic campus experience.</p>
+      <p>Beyond standard catering, we have experience partnering with local eateries and restaurants near universities to create a more authentic, campus-specific food experience. Depending on the venue and location, options range from classic hackathon catering to curated local partnerships.</p>
+
+      <div class="showcase-grid" style="margin-top:1.5rem;">
+        <div class="showcase-item">
+          <img src="images/onsite/pizza.jpg" alt="Pizza catering" />
+        </div>
+        <div class="showcase-item">
+          <img src="images/onsite/sandwiches.jpg" alt="Sandwich platters" />
+        </div>
+        <div class="showcase-item">
+          <img src="images/onsite/catering.jpg" alt="Event catering spread" />
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;margin-top:1.5rem;">
+        <div class="deliverable-item">
+          <h4>Local Partnerships</h4>
+          <p>We source from nearby restaurants and eateries, supporting local businesses. Dietary accommodations (vegetarian, vegan, halal) at every stop.</p>
+        </div>
+        <div class="deliverable-item">
+          <h4>Full-Day Coverage</h4>
+          <p>Meal service plus continuous snacks and beverages throughout each 6-hour sprint. Scaled per event based on expected attendance. All catering is fully covered.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banners, Signage & Swag -->
+  <section class="section fade-in">
+    <div class="container">
+      <span class="section-label">Part A.6 — Branding & Signage</span>
+      <h2>Banners, Signage & <em>Swag</em></h2>
+      <p>DayDreamers will produce Ara-branded event materials that travel across all campus stops. All banners and signage remain with the Ara team after the tour concludes — reusable for future events, meetups, and activations.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem;">
+        <div class="showcase-item">
+          <img src="images/onsite/ara-banner-design.jpg" alt="Ara × DayDreamers retractable banner" style="height:240px;object-fit:contain;background:var(--card);"/>
+          <div class="showcase-caption">
+            <h4>Retractable Banner</h4>
+            <p>Co-branded pull-up banner design</p>
+          </div>
+        </div>
+        <div class="showcase-item">
+          <img src="images/onsite/ara-booth-banner-table.png" alt="Full booth setup" style="height:240px;object-fit:cover;"/>
+          <div class="showcase-caption">
+            <h4>Full Booth Setup</h4>
+            <p>Banner + branded tablecloth with materials</p>
+          </div>
+        </div>
+        <div class="showcase-item">
+          <img src="images/onsite/ara-tablecloth.png" alt="Ara branded tablecloth" style="height:240px;object-fit:cover;"/>
+          <div class="showcase-caption">
+            <h4>Branded Tablecloth</h4>
+            <p>Table display for registration &amp; demos</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:1.5rem; font-size:0.88rem; color:var(--muted);">All branding and signage is provided by the Ara × DayDreamers team. DayDreamers handles design, production, and logistics — your school just provides the venue.</p>
+
+      <!-- Swag — inline, same page -->
+      <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border); display:grid; grid-template-columns:1fr 1fr; gap:1rem; align-items:center;">
+        <div>
+          <span class="section-label" style="margin-bottom:0.5rem;">Optional Add-On</span>
+          <h3 style="font-family:'DM Serif Display',serif;font-size:1.1rem;margin-bottom:0.75rem;">Custom <em style="color:var(--accent);font-style:italic;">Swag</em></h3>
+          <p style="font-size:0.88rem;">T-shirts, die-cut stickers, custom pens, tote bags. DayDreamers handles design and production — scoped and billed separately.</p>
+        </div>
+        <div class="showcase-item" style="border-radius:var(--radius);overflow:hidden;">
+          <img src="images/onsite/ara-swag-table.png" alt="Ara branded swag" style="height:180px;"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="section section-alt fade-in">
+    <div class="container">
+      <span class="section-label">Part B — Timeline</span>
+      <h2>April to <em>June</em></h2>
+      <p>The tour runs from April to June. Because May is typically exam season at US universities, events are distributed across the timeline to maximize attendance. Expected cadence: 1–3 campus activations per week.</p>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot">01</div>
+          <div class="tl-content">
+            <h3>April 11–12</h3>
+            <p>Campus activation — Tour kickoff</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">02</div>
+          <div class="tl-content">
+            <h3>April 18–19</h3>
+            <p>Campus activation</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">03</div>
+          <div class="tl-content">
+            <h3>May 23–24</h3>
+            <p>Campus activation — Post-exam period</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">04</div>
+          <div class="tl-content">
+            <h3>May 30–31</h3>
+            <p>Campus activation</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">05</div>
+          <div class="tl-content">
+            <h3>June 6–7</h3>
+            <p>Campus activation</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">06</div>
+          <div class="tl-content">
+            <h3>June 13–14</h3>
+            <p>Campus activation — Tour finale</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Network -->
+  <section class="section fade-in">
+    <div class="container">
+      <span class="section-label">Part C — Community Network</span>
+      <h2>Organizer <em>Contacts</em></h2>
+      <p>We have direct connections with organizers across major university hacker communities. These organizers run hackathons, coding clubs, and student tech communities.</p>
+
+      <table class="contacts-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Organization / School</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Aidan Gu</td><td>UC Santa Cruz</td></tr>
+          <tr><td>Jung Hyun Andrew Kim</td><td>SFU Surge</td></tr>
+          <tr><td>Ethan Ng</td><td>Deltahacks, McMaster University</td></tr>
+          <tr><td>James Cao</td><td>Hackathons CanAra</td></tr>
+          <tr><td>Nitish Chaudhary</td><td>Codeforge</td></tr>
+          <tr><td>Harshit Malviya</td><td>Shaheed Sukhdev College of Business Studies</td></tr>
+          <tr><td>Gregory Ramirez</td><td>University of South Florida</td></tr>
+          <tr><td>Leon Xu</td><td>Johns Hopkins University</td></tr>
+          <tr><td>Elizabeth Wong</td><td>Concordia University / HackConcordia</td></tr>
+          <tr><td>Roland Yang</td><td>University of California, Los Angeles</td></tr>
+          <tr><td>Anna Belenko</td><td>Computer Science Club / Brooklyn College</td></tr>
+          <tr><td>Matthew Shi</td><td>TidalTAMU, Texas A&amp;M University</td></tr>
+          <tr><td>Heli KArakia</td><td>University of California, Santa Cruz</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Track Record -->
+  <section class="section section-alt fade-in">
+    <div class="container">
+      <span class="section-label">Part D — Track Record</span>
+      <h2>Previous <em>Experience</em></h2>
+
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-num">450+</div>
+          <div class="stat-label">Global Events</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">50+</div>
+          <div class="stat-label">Hackathons</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">400+</div>
+          <div class="stat-label">Curated Dinners</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">17+</div>
+          <div class="stat-label">Cities</div>
+        </div>
+      </div>
+
+      <div class="experience-grid">
+        <div class="experience-item">
+          <div class="stat">1,000+</div>
+          <h4>Stanford Founder Programs</h4>
+          <p>Demo day with 90 startups, 1,500+ attendees, and 300 investors.</p>
+        </div>
+        <div class="experience-item">
+          <div class="stat">200</div>
+          <h4>Stanford AI + Learning Differences</h4>
+          <p>200 participants in an AI-focused hackathon exploring assistive technology.</p>
+        </div>
+        <div class="experience-item">
+          <div class="stat">73</div>
+          <h4>GoodNotes Hackathon</h4>
+          <p>73 participants from 15+ countries, producing 21 projects.</p>
+        </div>
+        <div class="experience-item">
+          <div class="stat">75%</div>
+          <h4>Johns Hopkins ITGL</h4>
+          <p>40+ participants, 8 teams, with 75% intending to continue their projects.</p>
+        </div>
+      </div>
+
+      <div class="experience-grid" style="margin-top:0.75rem;">
+        <div class="experience-item">
+          <div class="stat">50+</div>
+          <h4>PolyU AI Hackathon</h4>
+          <p>50+ students with 20+ participants mentored.</p>
+        </div>
+        <div class="experience-item">
+          <div class="stat">100+</div>
+          <h4>Magic Loops</h4>
+          <p>Represented the product at hackathons and workshops, driving adoption among 100+ early users.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Showcase -->
+  <section class="section fade-in">
+    <div class="container">
+      <span class="section-label">Event Showcase</span>
+      <h2>Recent <em>Activations</em></h2>
+
+      <div class="showcase-grid">
+        <a href="https://www.linkedin.com/posts/chinat-yu_moltbook-moving-from-ai-as-a-tool-to-ai-share-7424532580852621314-WV0P" target="_blank" class="showcase-card">
+          <div class="showcase-card-img">
+            <img src="images/image_1.png" alt="OpenClaw Workshop with AGI House" />
+          </div>
+          <div class="showcase-card-body">
+            <h4>OpenClaw Workshop × AGI House</h4>
+            <p>15 top researchers & founders from Google, Stanford, ChatGPT, Airbnb</p>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/posts/selina-li-2624a4198_what-a-way-to-celebrate-christmas-by-hosting-activity-7410856518750748672-Pjri" target="_blank" class="showcase-card">
+          <div class="showcase-card-img">
+            <img src="images/image_2.png" alt="Christmas Hackathon" />
+          </div>
+          <div class="showcase-card-body">
+            <h4>Christmas Hackathon</h4>
+            <p>YC + Lovable — 200+ registered, 10+ projects</p>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/posts/angellui_320-applicants-3-hours-1-belief-hong-ugcPost-7421633279327629312-_P_a" target="_blank" class="showcase-card">
+          <div class="showcase-card-img">
+            <img src="images/image_3.png" alt="Build Night with Tina Huang and MetaGPT" />
+          </div>
+          <div class="showcase-card-body">
+            <h4>Build Night × Tina Huang & MetaGPT</h4>
+            <p>1M+ YouTuber — 300+ registered, 30+ projects</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section section-alt fade-in">
+    <div class="container">
+      <span class="section-label">Team</span>
+      <h2>Behind 450+ <em>Events</em></h2>
+
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="images/team_angel.png" alt="Angel Lui" />
+          <h4>Angel Lui</h4>
+          <div class="role">Community Builder</div>
+          <p>Entrepreneur who has organized 400+ events across 17+ cities. Specialist in tech-community intersection.</p>
+        </div>
+        <div class="team-member">
+          <img src="images/team_chinat.png" alt="Chinat Yu" />
+          <h4>Chinat Yu</h4>
+          <div class="role">AI Researcher & Strategist</div>
+          <p>Johns Hopkins & Stanford Alum. MLH Top 50 honoree. Expert in building high-impact hackathon ecosystems.</p>
+        </div>
+        <div class="team-member">
+          <img src="images/team_jeffrey.png" alt="Jeffrey Zhuo" />
+          <h4>Jeffrey Zhuo</h4>
+          <div class="role">Technical Lead</div>
+          <p>Focused on global execution standards and building deep community roots across innovation hubs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- References -->
+  <section class="section fade-in">
+    <div class="container">
+      <span class="section-label">Comparable Programs</span>
+      <h2>Similar <em>Activations</em></h2>
+      <p>DayDreamers' campus tour model follows the same playbook used by leading AI companies for global developer activation.</p>
+
+      <div class="ref-grid">
+        <a href="https://mistral.ai/hackathon" target="_blank" class="ref-item" style="text-decoration:none;color:inherit;">
+          <img src="images/image_5.png" alt="Mistral AI Worldwide Hackathon" />
+          <div class="ref-caption">
+            <h4>Mistral AI</h4>
+            <p>Worldwide Hackathon — 7 cities simultaneously</p>
+          </div>
+        </a>
+        <a href="https://elevenlabs.io/hackathon" target="_blank" class="ref-item" style="text-decoration:none;color:inherit;">
+          <img src="images/image_6.png" alt="ElevenLabs Worldwide Hackathon" />
+          <div class="ref-caption">
+            <h4>ElevenLabs</h4>
+            <p>Worldwide Hackathon — global developer activation</p>
+          </div>
+        </a>
+        <a href="https://tinyfish.io" target="_blank" class="ref-item" style="text-decoration:none;color:inherit;">
+          <img src="images/image_7.png" alt="TinyFish Global Accelerator" />
+          <div class="ref-caption">
+            <h4>TinyFish Accelerator</h4>
+            <p>9-week global accelerator program</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partnership -->
+  <section class="section section-alt fade-in">
+    <div class="container">
+      <span class="section-label">Partnership</span>
+      <h2>What We <em>Need From You</em></h2>
+
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;margin-top:1.5rem;">
+        <div class="deliverable-item">
+          <h4>Venue Access</h4>
+          <p>A large classroom, auditorium, or event space that can hold 50–150 students for 6 hours, with power outlets and Wi-Fi.</p>
+        </div>
+        <div class="deliverable-item">
+          <h4>Student Promotion</h4>
+          <p>Help spread the word through your club channels, mailing lists, and social media. We provide all marketing assets.</p>
+        </div>
+        <div class="deliverable-item">
+          <h4>Day-of Support</h4>
+          <p>2–3 student org members to help with check-in, wayfinding, and general event coordination on the day.</p>
+        </div>
+        <div class="deliverable-item">
+          <h4>That's It</h4>
+          <p>We handle everything else — catering, prizes, mentors, branding, signage, AV, registration, and post-event reporting.</p>
+        </div>
+      </div>
+
+      <p style="margin-top:1.5rem;font-size:0.95rem;color:var(--muted);text-align:center;"><strong style="color:var(--fg);">Zero cost to your organization.</strong> Ara and DayDreamers fully sponsor every event.</p>
+    </div>
+  </section>
+
+  <!-- Fixed footer bar for PDF (every page) -->
+  <div class="page-footer-bar">
+    <span>Ara &times; DayDreamers &nbsp;·&nbsp; Campus Partnership</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <span>Ara &times; DayDreamers</span>
+    </div>
+    <p class="footer-conf">Interested in hosting? Reach out to us at hello@daydreamers-academy.com</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
